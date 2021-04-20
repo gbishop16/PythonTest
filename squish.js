@@ -11,11 +11,21 @@ for(var i=0;i<inputs.length;i++)
 }
 function CloseToBoundaryA(input2)
 {
-
+  var output;
+  if(input2<=.5)
+  {
+    output = input2/2;
+  }
+  else if(input2>.5)
+  {
+    input2=1-input2;
+    output = input2/2;
+  }
+  return output;
 }
 var inputs2 = [0, 0.000027535691114583473, 0.004070137715896128, 0.18242552380635635, 0.2689414213699951, 0.425557483188341, 0.47178002201963243, 0.5, 0.5768852611320463, 0.6813537337890256, 0.7858349830425586, 0.8797431375322491, 0.9993891206405656, 1, 1];
 console.log("CloseToBoundaryA");
-for(var i =0;i<inputs2.length;i++)
+for(var i = 0;i<inputs2.length;i++)
 {
   console.log("Input: " + inputs2[i] + "  Output: " + CloseToBoundaryA(inputs2[i]));
 }
